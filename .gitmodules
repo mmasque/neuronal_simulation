@@ -1,0 +1,3 @@
+[submodule "brain_machine"]
+	path = brain_machine
+	url = https://github.com/aidan-zec/brain_machine.git
