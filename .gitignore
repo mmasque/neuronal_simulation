@@ -1,6 +1,13 @@
 /test_two_types
 /two_neurons
 /two_neurons_gauss
+
+*
+!/**/
+!*.*
 *.mat
 *.png
 *.fig
+*.dot
+*.DS_Store
+*.m~
