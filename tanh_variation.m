@@ -44,3 +44,18 @@ end
 
 %% run CSSR on all of this data.
 % this'll be slow
+L_range = 1:11;
+comps = zeros(numel(L_range), numel(as), numel(ds));
+As = cell(numel(L_range), numel(as), numel(ds));
+for a_i = 2:numel(as)
+    for d_i = 2:numel(ds)
+        dataset_FName = strcat('single_neuron_tanh_a', num2str(a_i), '_d', num2str(d_i),'_', num2str(NUM_BITS));
+        convert_dataset_to_textfile(state_seriess(:, a_i, d_i), dataset_FName);
+        
+        %run CSSr now that we have the data file
+        for L = L_range
+            [comps(L, a_i, d_i), As{L, a_i, d_i}] = run_CSSR_file(dataset_FName, 'alphabet.txt', L, 0.005, false);
+        end
+    end
+end
+
