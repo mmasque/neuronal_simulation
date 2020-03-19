@@ -42,6 +42,28 @@ else
     disp('hello');
 end
 system(call_CSSR);
+
+% rename files with L so they are not replaced.
+with_info = strcat(dataset_FName, '_info');
+with_info_l = strcat(with_info, "_", num2str(L_Max));
+change_name = strcat("cp ", with_info," ", with_info_l);
+system(change_name);
+
+with_results = strcat(dataset_FName, '_results');
+with_results_l = strcat(with_results, "_", num2str(L_Max));
+change_name = strcat("cp ", with_results," ", with_results_l);
+system(change_name);
+
+with_state_series = strcat(dataset_FName, '_state_series');
+with_state_series_l = strcat(with_state_series, "_", num2str(L_Max));
+change_name = strcat("cp ", with_state_series," ", with_state_series_l);
+system(change_name);
+
+with_dot = strcat(dataset_FName, '_inf.dot');
+with_dot_l = strcat(dataset_FName, "_", num2str(L_Max), '_inf.dot');
+change_name = strcat("cp ", with_dot," ", with_dot_l);
+system(change_name);
+
 %system(num2str(s))
 info_fname = strcat(dataset_FName, "_info");
 A = readmatrix(info_fname, "Delimiter", ":");
