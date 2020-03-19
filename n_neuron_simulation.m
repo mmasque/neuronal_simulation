@@ -31,5 +31,3 @@ for i = 2:n_bits
     curr = rand_n < tanh_data;
     data(:, i) = curr;
 end
-
-return data;
