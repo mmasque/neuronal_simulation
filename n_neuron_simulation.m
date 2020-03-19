@@ -1,9 +1,14 @@
 function [data] = n_neuron_simulation(n_neurons, n_bits, mult_out, mult_in, add_out, add_in)
 %{
 This function simulates the behaviour of a single line of interconnected
-binary neurons. A neuron's next state is determined probabilistically 
-according to a tanh function which takes inputs of the previous state of 
-the neuron itself and of the two (or one if at edge) neurons next to it. 
+binary neurons. A neuron's next state is determined using tanh as an 
+activation function which takes inputs of the previous state of 
+the neuron itself and of the states of the two (or one if at edge)
+neurons next to it. 
+
+See A Haun, G Tononi - Entropy, 2019 for more on the structure 
+(uses a different activation function) 
+
 
 The tanh function: 
     Y = mult_out * tanh(mult_in * X + add_in) + add_out
