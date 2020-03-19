@@ -39,10 +39,6 @@ if (~exist('mult_in', 'var')) mult_in = 3; end
 if (~exist('add_out', 'var')) add_out = 0.5; end
 if (~exist('add_in', 'var')) add_in = -2; end
 
-disp(mult_out)
-disp(mult_in)
-disp(add_out)
-disp(add_in)
 % construct weight transition matrix, very lazy implementation
 wtm = zeros(n_neurons, n_neurons);
 for i = 1:n_neurons
