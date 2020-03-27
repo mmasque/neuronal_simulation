@@ -11,7 +11,7 @@ alphabet_FName = strcat('alphabet_', num2str(2^n_neurons));
 
 convert_dataset_to_textfile(joined_data, dataset_FName);
 convert_dataset_to_textfile(alphabet, alphabet_FName);
-
+%% run CSSR on all the neuroons
 Max_L = 7;
 comps = zeros(1, Max_L);
 for L = 1:Max_L
