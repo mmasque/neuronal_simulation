@@ -11,3 +11,6 @@
 *.dot
 *.DS_Store
 *.m~
+
+/CSSR-Matlab
+/5_neurons
